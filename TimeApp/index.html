@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Time App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loading-container">
+        <div class="loadingio-spinner-dual-ring-a2dr0a1wii6"><div class="ldio-j5tca63i5ya">
+            <div></div><div><div></div></div>
+            </div></div>
+    </div>
+    <!-- Tambahkan kelas sesuai dengan ID untuk tombol -->
+    <button id="dark-mode-toggle" onclick="toggleInvertFilter()"></button>
+
+    <div class="menu">
+    <button class="Timezone" onclick="showContent('Timezone')">Timezone</button>
+    <button class="Calendar" onclick="showContent('Calendar')">Calendar</button>
+    <button class="Timer" onclick="showContent('Timer')">Timer</button>
+</div>
+
+<div id="Timezone" class="content active">
+    <h1>Timezone</h1>
+    <div class="container">
+        <div id="timezone"></div>
+        <div id="date"></div>
+        <div id="time"></div>
+        <div id="clock">
+            <div id="hour" class="hand"></div>
+            <div id="minute" class="hand"></div>
+            <div id="second" class="hand"></div>
+            <div id="center-dot"></div>
+            <div class="numbers">
+                <div id="num1">1</div>
+                <div id="num2">2</div>
+                <div id="num3">3</div>
+                <div id="num4">4</div>
+                <div id="num5">5</div>
+                <div id="num6">6</div>
+                <div id="num7">7</div>
+                <div id="num8">8</div>
+                <div id="num9">9</div>
+                <div id="num10">10</div>
+                <div id="num11">11</div>
+                <div id="num12">12</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="Calendar" class="content">
+    <h1>Calendar</h1>
+    <div class="container">
+
+        <div id="calendarHeader">
+
+            <div class="calendarMY">
+                <button onclick="prevMonth()"><b>&lt;</b></button>
+                <h2 id="calendarMonthYear" onclick="showMonthYearSelection()">Month Year</h2>
+                <button onclick="nextMonth()"><b>&gt;</b></button>
+            </div>
+            <button onclick="setToDefaultDate()"><b>Set to Today</b></button>
+            <div id="monthYearSelection">
+                <div id="monthYearForm">
+                    <select id="selectMonth">
+                        <option class="optn" value="0">January</option>
+                        <option class="optn" value="1">February</option>
+                        <option class="optn" value="2">March</option>
+                        <option class="optn" value="3">April</option>
+                        <option class="optn" value="4">May</option>
+                        <option class="optn" value="5">June</option>
+                        <option class="optn" value="6">July</option>
+                        <option class="optn" value="7">August</option>
+                        <option class="optn" value="8">September</option>
+                        <option class="optn" value="9">October</option>
+                        <option class="optn" value="10">November</option>
+                        <option class="optn" value="11">December</option>
+                    </select>
+                    <input type="number" id="inputYear" placeholder="Year">
+                    <button onclick="changeMonthYear()" id="sbmtMY"><b>Go</b></button>
+                </div>
+            </div>
+        </div>
+        
+        <table id="calendarTable">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendarBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<div id="Timer" class="content">
+    <h1>Timer</h1>
+    <div class="container">
+
+        <div class="tmr">
+            <input type="number" id="timer-input" placeholder="Set timer (seconds)" min="1" required>
+            
+            <div class="bttnTimer">    
+                <button id="startTimer" onclick="startTimer()">Start Timer</button>
+                <button onclick="psdTimer()" class="psdT">Paused</button>
+                <button onclick="rsmTimer()" class="rsmT">Resume</button>
+                <button onclick="t0NW()" class="turnoffN0W">Turn Off Now</button>
+                <button id="resetTimer" onclick="rstTimer()">Reset</button>
+            </div>
+        
+        </div>
+    </div>
+    
+    <button class="turnoffTA" onclick="tORst()">Turn off</button>
+    
+    <p id="timer-output"></p> 
+
+
+    <input id="audioInputBSF" type="file" accept="audio/*, video/*" style="display: none;">
+    <input id="audioInputBEL" type="file" accept="audio/*, video/*" style="display: none;">
+
+    <div class="customAudio">
+        <div class="columnCATS">
+            <p class="tS">Upload Your Audio For Timer Start:</p>
+            <div class="uyafts">
+                <button class="uploadAudioS" title="Upload Your Audio For Timer Start!">Click to Upload</button>
+                <button class="audioDflt" onclick="audioSDefault()">Set to Default</button>
+                <p class="nameFileAudioS">Default-Timer-Start.mp3</p>
+            </div>
+        </div>
+
+        <div class="columnCATE">
+            <p class="tE">Upload Your Audio For Timer Expired:</p>
+            <div class="uyafte">
+                <button class="uploadAudioE" title="Upload Your Audio For Timer Expired!">Click to Upload</button>
+                <button class="audioDflt" onclick="audioEDefault()">Set to Default</button>
+                <p class="nameFileAudioE">Default-Timer-Expired.mp3</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+    
+    <audio id="audioPlayerF" src="First_timer-clock-ticking-60-second-countdown-118231.mp3" loop></audio>
+    <audio id="audioPlayerL" src="Last_timer-(normal)microwave-timer-117077.mp3" loop></audio>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
